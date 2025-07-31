@@ -1,59 +1,27 @@
-# ShoppitNg
+<div align="center">
+  <br />
+    <h1>Shoopit</h1>
+    <p>An e-commerce application build using Angular 19 and Spartan UI</p>
+  <br />
+  <div>
+    <img src="https://img.shields.io/badge/-Angular-black?style=for-the-badge&logoColor=white&logo=angular&color=087ea4" alt="angular.io" />
+    <img src="https://img.shields.io/badge/-Spartan_UI-black?style=for-the-badge&logoColor=white&logo=shadcnui&color=black" alt="spartan" />
+    <img src="https://img.shields.io/badge/-Tailwind_CSS-black?style=for-the-badge&logoColor=white&logo=tailwindcss&color=087ea4" alt="tailwindcss" />
+  </div>
+  <h3 align="center">A Clothing Store</h3>
+</div>
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.10.
+## 📋 <a name="table">Table of Contents</a>
 
-## Development server
+1. 🤖 [Introduction](#introduction)
+2. ⚙️ [Tech Stack](#tech-stack)
 
-To start a local development server, run:
+## <a name="introduction">🤖 Introduction</a>
 
-```bash
-ng serve
-```
+Built with Angular 19 and styled with Spartan UI & TailwindCSS, Shoppit is an e-commerce website project designed to shop for clothes. The platform offers a sleek and modern experience for browsing and discovering trending clothes.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## <a name="tech-stack">⚙️ Tech Stack</a>
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Angular 19
+- Spartan UI
+- Tailwind CSS
