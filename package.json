@@ -1,12 +1,14 @@
 {
   "name": "shoppit-ng",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "github-build": "ng build --configuration production --base-href 'https://ak18dec.github.io/shoppit-ng/'",
+    "github-deploy": "npx angular-cli-ghpages --dir=dist/shoppit-ng/browser --no-silent"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +26,7 @@
     "@spartan-ng/brain": "0.0.1-alpha.494",
     "@tailwindcss/cli": "^4.1.11",
     "@tailwindcss/postcss": "^4.1.11",
+    "angular-cli-ghpages": "^2.0.3",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "ngx-sonner": ">=3.0.0",
