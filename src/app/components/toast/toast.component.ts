@@ -7,7 +7,7 @@ import { ToastService } from '../../services/toast.service';
 @Component({
   selector: 'app-toast',
   imports: [HlmToaster],
-  templateUrl: './toast.component.html',
+  template: `<hlm-toaster />`,
   styleUrl: './toast.component.css'
 })
 export class ToastComponent {
