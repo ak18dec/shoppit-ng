@@ -1,6 +1,6 @@
 <div align="center">
   <br />
-    <h1>Shoopit</h1>
+    <h1>Shoppit</h1>
     <p>An e-commerce application build using Angular 19 and Spartan UI</p>
   <br />
   <div>
