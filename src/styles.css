@@ -59,7 +59,8 @@
 
     button,
     a,
-    label {
+    label,
+    img {
         @apply cursor-pointer;
     }
 }

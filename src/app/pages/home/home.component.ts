@@ -57,7 +57,7 @@ import { products } from '../../data/products';
               <ng-icon name="lucideArrowRight" class="h-4 w-4" />
             </button>
           </a>
-          <a routerLink="/products">
+          <a routerLink="/categories">
             <button hlmBtn variant="outline" size="lg">
               Browse Categories
             </button>
