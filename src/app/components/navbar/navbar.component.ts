@@ -102,7 +102,9 @@ import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
                 <ng-container>
                   <ng-icon *ngIf="selectedTheme === 'light'" name="lucideSun" size="16"></ng-icon>
                   <ng-icon *ngIf="selectedTheme === 'dark'" name="lucideMoon" size="16"></ng-icon>
-                  <ng-icon *ngIf="selectedTheme === 'system'" name="lucideSunMoon" size="16"></ng-icon>
+                  <ng-icon *ngIf="selectedTheme === 'system'" 
+                    [name]="systemPrefersDark ? 'lucideMoon' : 'lucideSun'" size="16">
+                  </ng-icon>
                 </ng-container>
               </button>
               <ng-template #theme_menu>
@@ -138,12 +140,17 @@ import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
 export class NavbarComponent {
 
   selectedTheme: 'light' | 'dark' | 'system' = 'system';
+  systemPrefersDark: boolean = false;
 
   constructor(
     public authService: AuthService,
     public cartService: CartService,
     public router: Router
   ) {}
+
+  ngOnInit() {
+    this.checkSystemThemePreference();
+  }
 
   handleLogout() {
     this.authService.logout();
@@ -166,12 +173,18 @@ export class NavbarComponent {
       case 'system':
         localStorage.removeItem('theme');
         // Optional: Reflect system preference
-        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-          document.documentElement.classList.add('dark');
-        } else {
-          document.documentElement.classList.remove('dark');
-        }
+        this.checkSystemThemePreference();
         break;
     }
+  }
+
+  private checkSystemThemePreference() {
+    if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+          this.systemPrefersDark = true;
+        } else {
+          document.documentElement.classList.remove('dark');
+          this.systemPrefersDark = false;
+        }
   }
 }
