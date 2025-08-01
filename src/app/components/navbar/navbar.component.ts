@@ -5,7 +5,7 @@ import { AuthService } from '../../services/auth.service';
 import { CartService } from '../../services/cart.service';
 import { HlmButton } from '@spartan-ng/helm/button';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideLogOut, lucidePackage, lucideShoppingCart, lucideUser, lucideMoon } from '@ng-icons/lucide';
+import { lucideLogOut, lucidePackage, lucideShoppingCart, lucideUser, lucideMoon, lucideSun, lucideSunMoon } from '@ng-icons/lucide';
 import { HlmMenu, HlmMenuItem, HlmMenuSeparator, HlmMenuItemRadio, HlmMenuItemCheck } from '@spartan-ng/helm/menu';
 import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
 
@@ -28,7 +28,9 @@ import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
     lucideShoppingCart,
     lucideUser,
     lucideLogOut,
-    lucideMoon
+    lucideMoon,
+    lucideSun,
+    lucideSunMoon
    })],
   template: `
     <nav class="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
@@ -97,7 +99,11 @@ import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
 
             <div class="flex w-full items-center justify-center">
               <button hlmBtn variant="ghost" align="end" [brnMenuTriggerFor]="theme_menu">
-                <ng-icon name="lucideMoon" size="16" />
+                <ng-container>
+                  <ng-icon *ngIf="selectedTheme === 'light'" name="lucideSun" size="16"></ng-icon>
+                  <ng-icon *ngIf="selectedTheme === 'dark'" name="lucideMoon" size="16"></ng-icon>
+                  <ng-icon *ngIf="selectedTheme === 'system'" name="lucideSunMoon" size="16"></ng-icon>
+                </ng-container>
               </button>
               <ng-template #theme_menu>
               <hlm-menu class="w-42">
