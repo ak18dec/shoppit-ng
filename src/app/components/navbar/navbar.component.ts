@@ -5,8 +5,8 @@ import { AuthService } from '../../services/auth.service';
 import { CartService } from '../../services/cart.service';
 import { HlmButton } from '@spartan-ng/helm/button';
 import { NgIcon, provideIcons } from '@ng-icons/core';
-import { lucideLogOut, lucidePackage, lucideShoppingCart, lucideUser } from '@ng-icons/lucide';
-import { HlmMenu, HlmMenuItem, HlmMenuSeparator } from '@spartan-ng/helm/menu';
+import { lucideLogOut, lucidePackage, lucideShoppingCart, lucideUser, lucideMoon } from '@ng-icons/lucide';
+import { HlmMenu, HlmMenuItem, HlmMenuSeparator, HlmMenuItemRadio, HlmMenuItemCheck } from '@spartan-ng/helm/menu';
 import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
 
 @Component({
@@ -19,13 +19,16 @@ import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
     HlmMenu,
     HlmMenuItem,
     HlmMenuSeparator,
-    BrnMenuTrigger
+    BrnMenuTrigger,
+    HlmMenuItemCheck,
+    HlmMenuItemRadio
   ],
   providers: [provideIcons({ 
     lucidePackage, 
     lucideShoppingCart,
     lucideUser,
-    lucideLogOut
+    lucideLogOut,
+    lucideMoon
    })],
   template: `
     <nav class="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
@@ -91,6 +94,35 @@ import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
                 </a>
               </div>
             </ng-template>
+
+            <div class="flex w-full items-center justify-center">
+              <button hlmBtn variant="ghost" align="end" [brnMenuTriggerFor]="theme_menu">
+                <ng-icon name="lucideMoon" size="16" />
+              </button>
+              <ng-template #theme_menu>
+              <hlm-menu class="w-42">
+                <button hlmMenuItemRadio class="capitalize" 
+                  [checked]="selectedTheme === 'light'" 
+                  (triggered)="selectTheme('light')">
+                  <span>Light</span>
+                  <hlm-menu-item-check />
+                </button>
+                <button hlmMenuItemRadio class="capitalize"
+                  [checked]="selectedTheme === 'dark'" 
+                  (triggered)="selectTheme('dark')">
+                  <span>Dark</span>
+                  <hlm-menu-item-check />
+                </button>
+                <button hlmMenuItemRadio class="capitalize"
+                  [checked]="selectedTheme === 'system'" 
+                  (triggered)="selectTheme('system')">
+                  <span>System</span>
+                  <hlm-menu-item-check />
+                </button>
+              </hlm-menu>
+            </ng-template>
+            </div>
+            
           </div>
         </div>
       </div>
@@ -98,6 +130,9 @@ import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
   `
 })
 export class NavbarComponent {
+
+  selectedTheme: 'light' | 'dark' | 'system' = 'system';
+
   constructor(
     public authService: AuthService,
     public cartService: CartService,
@@ -107,5 +142,30 @@ export class NavbarComponent {
   handleLogout() {
     this.authService.logout();
     this.router.navigate(['/']);
+  }
+
+  selectTheme(theme: 'light' | 'dark' | 'system') {
+    this.selectedTheme = theme;
+    switch (theme) {
+      case 'light':
+        document.documentElement.classList.remove('dark');
+        localStorage.setItem('theme', 'light');
+        break;
+
+      case 'dark':
+        document.documentElement.classList.add('dark');
+        localStorage.setItem('theme', 'dark');
+        break;
+
+      case 'system':
+        localStorage.removeItem('theme');
+        // Optional: Reflect system preference
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          document.documentElement.classList.add('dark');
+        } else {
+          document.documentElement.classList.remove('dark');
+        }
+        break;
+    }
   }
 }

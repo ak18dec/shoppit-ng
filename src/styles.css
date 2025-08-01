@@ -54,6 +54,7 @@
 @layer base {
     * {
         @apply border-border antialiased;
+        @apply scheme-light-dark;
     }
 
     button,
