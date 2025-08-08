@@ -33,7 +33,7 @@ import { BrnMenuTrigger } from '@spartan-ng/brain/menu';
     lucideSunMoon
    })],
   template: `
-    <nav class="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
+    <nav class="border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 text-primary">
       <div class="container mx-auto px-4">
         <div class="flex h-16 items-center justify-between">
           <a routerLink="/" class="flex items-center space-x-2">

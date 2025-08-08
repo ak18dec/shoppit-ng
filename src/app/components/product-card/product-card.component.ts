@@ -50,7 +50,6 @@ import { HlmButton } from '@spartan-ng/helm/button';
           <p class="text-muted-foreground text-sm mb-3 line-clamp-2">{{ product.description }}</p>
           <div class="flex items-center gap-2 mb-3">
             <div class="flex items-center">
-              <!-- <lucide-icon name="star" class="h-4 w-4 fill-yellow-400 text-yellow-400"></lucide-icon> -->
               <ng-icon name="lucideStar" class="h-4 w-4 fill-yellow-400 text-yellow-400" />
               <span class="text-sm ml-1">{{ product.rating }}</span>
             </div>
@@ -66,7 +65,6 @@ import { HlmButton } from '@spartan-ng/helm/button';
             [disabled]="!product.inStock"
             (click)="handleAddToCart($event)"
           >
-            <!-- <lucide-icon name="shopping-cart" class="h-4 w-4"></lucide-icon> -->
             <ng-icon name="lucideShoppingCart" class="h-4 w-4" />
             Add to Cart
           </button>

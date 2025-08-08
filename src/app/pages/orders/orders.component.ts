@@ -23,7 +23,7 @@ import { Order } from '../../models/product.model';
     lucideCreditCard
    })],
   template: `
-    <div *ngIf="orders().length > 0; else noOrders" class="max-w-4xl mx-auto space-y-6">
+    <div *ngIf="orders().length > 0; else noOrders" class="max-w-4xl mx-auto space-y-6 text-primary">
       <h1 class="text-3xl font-bold">Order History</h1>
 
       <div class="space-y-6">

@@ -28,7 +28,7 @@ import { products, categories } from '../../data/products';
     lucideListFilter
    })],
   template: `
-    <div class="space-y-6">
+    <div class="space-y-6 text-primary">
       <div class="flex flex-col sm:flex-row gap-4 items-center justify-between">
         <h1 class="text-3xl font-bold">Products</h1>
         <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto">

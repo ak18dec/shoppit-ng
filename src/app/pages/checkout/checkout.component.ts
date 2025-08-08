@@ -31,7 +31,7 @@ import { ToastService } from '../../services/toast.service';
     lucideCreditCard
    })],
   template: `
-    <div class="max-w-4xl mx-auto space-y-6">
+    <div class="max-w-4xl mx-auto space-y-6 text-primary">
       <h1 class="text-3xl font-bold">Checkout</h1>
 
       <form (ngSubmit)="handleSubmit()" class="grid lg:grid-cols-2 gap-8">

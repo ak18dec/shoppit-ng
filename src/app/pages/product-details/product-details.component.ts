@@ -30,7 +30,7 @@ import { ToastService } from '../../services/toast.service';
     lucideShield
    })],
   template: `
-    <div *ngIf="product" class="grid lg:grid-cols-2 gap-12">
+    <div *ngIf="product" class="grid lg:grid-cols-2 gap-12 text-primary">
       <div class="space-y-4">
         <div class="aspect-square overflow-hidden rounded-lg">
           <img

@@ -26,7 +26,7 @@ import { CartService } from '../../services/cart.service';
     lucideShoppingBag
    })],
   template: `
-    <div *ngIf="cartService.items().length > 0; else emptyCart" class="max-w-4xl mx-auto space-y-6">
+    <div *ngIf="cartService.items().length > 0; else emptyCart" class="max-w-4xl mx-auto space-y-6 text-primary">
       <h1 class="text-3xl font-bold">Shopping Cart ({{ cartService.totalItems() }} items)</h1>
 
       <div class="grid lg:grid-cols-3 gap-8">

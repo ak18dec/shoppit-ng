@@ -1,7 +1,7 @@
-<div class="bg-gray-100 rounded-lg">
+<div class="rounded-lg text-primary bg-card">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
     <div class="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
-      <h2 class="text-2xl font-bold text-gray-900">Collections</h2>
+      <h2 class="text-2xl font-bold">Collections</h2>
 
       <div class="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:space-y-0 lg:gap-x-6">
         <ng-container *ngFor="let category of categories">
@@ -17,7 +17,7 @@
                 <span class="absolute inset-0"></span>
               </a>
             </h3>
-            <p class="text-base font-semibold text-gray-900">{{ category.description }}</p>
+            <p class="text-base font-semibold">{{ category.description }}</p>
           </div>
         </ng-container>
       </div>

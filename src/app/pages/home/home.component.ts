@@ -41,7 +41,7 @@ import { products } from '../../data/products';
     lucideStar
    })],
   template: `
-    <div class="space-y-16">
+    <div class="space-y-16 text-primary">
       <!-- Hero Section -->
       <section class="text-center space-y-6 py-12">
         <h1 class="text-4xl md:text-6xl font-bold">
